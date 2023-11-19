@@ -1,0 +1,57 @@
+
+body{
+    background-color: #9D8478;
+}
+#header{
+    display: flex;
+    position: absolute;
+    top: 10%;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    width: 100%;
+}
+#logotext{
+    font-size: 25px;
+    color: #6E4454 ;
+    margin: 1px;
+    font-weight: bolder;
+}
+.logo-container img {
+    height: 25px;
+    width: 25px; 
+    display: flex;
+    justify-content: center;
+}
+#space{
+    width: 40%;
+}
+#login{
+    font-size: 25px;
+    color: #6E4454 ;
+    margin: 1px;
+    font-weight: bolder;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: right;
+}
+#login:hover{
+    color: #4d2f3a;
+}
+#d1{
+    width: 5px;
+}
+a {
+    text-decoration: none;
+  }
+  #text-box {
+    color: #6E4454; 
+    width: 50%;
+    top: 30%;
+    left: 30%;
+    font-size: 25px;
+    position: absolute;
+  }
+
+
