@@ -5,13 +5,13 @@ let text_input = document.querySelector('.text');
 let keyboard_wrapp = document.querySelector('.keyboard_wrapp');
 
 for(let i = 0; i < keys.length; i++) {
-    keys[i].setAttribute('keyname', keys[i].innerText);
+    keys[i].setAttribute('keyName', keys[i].innerText);
     keys[i].setAttribute('lowerCaseName', keys[i].innerText.toLowerCase());
 }
 
 window.addEventListener('keydown', function(e) {
     for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
+        if(e.key == keys[i].getAttribute('keyName' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
             keys[i].classList.add('active')
         }
         if(e.code == 'Space') {
@@ -22,7 +22,7 @@ window.addEventListener('keydown', function(e) {
 
 window.addEventListener('keyup', function(e) {
     for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
+        if(e.key == keys[i].getAttribute('keyName' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
             keys[i].classList.remove('active')
             keys[i].classList.add('remove')
         }
