@@ -1,3 +1,4 @@
+
 async function getRandomParagraph() {
     try {
       const response = await fetch('https://baconipsum.com/api/?type=meat-and-filler&paras=1');
@@ -19,6 +20,9 @@ async function getRandomParagraph() {
   
 
   let keys = document.querySelectorAll('.keys');
+=======
+let keys = document.querySelectorAll('.keys');
+
 let spaceKey = document.querySelector('.space_key');
 let body = document.querySelector('body');
 let text_input = document.querySelector('.text');
@@ -55,4 +59,5 @@ window.addEventListener('keyup', function(e) {
         },200)
     }
 })
-  
+
+
