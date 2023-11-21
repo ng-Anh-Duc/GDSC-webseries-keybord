@@ -4,8 +4,8 @@ body{
 }
 #header{
     display: flex;
-    position: absolute;
-    top: 10%;
+    position: relative;
+    top: 5%;
     justify-content: center;
     align-items: center;
     margin: 1%;
@@ -24,7 +24,7 @@ body{
     justify-content: center;
 }
 #space{
-    width: 40%;
+    width: 60%;
 }
 #login{
     font-size: 25px;
@@ -50,6 +50,10 @@ a {
     font-size: 25px;
     overflow: hidden;
     position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 7%;
+    padding-top: 3%;
   }
 
 
@@ -71,7 +75,7 @@ a {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      height: 100vh;
+      height: auto;
       flex-direction: column;
       margin: 0 10px;
   }
@@ -79,7 +83,7 @@ a {
   .keyboard_wrapp {
       max-width: 1008px;
       width: 100%;
-      background-color: #fff;
+      background-color: transparent;
       border-radius: 15px;
       overflow: hidden;
       position: relative;
@@ -191,10 +195,11 @@ a {
       background-color: #f7f7f7;
       padding-left: 10px;
       transition: .2s;
+      border-radius: 10px;
   }
   
   .keys.remove {
-      animation: keys_animation 1s forwards ;
+      animation: keys_animation 0.1s forwards ;
   }
   
   @keyframes keys_animation {
