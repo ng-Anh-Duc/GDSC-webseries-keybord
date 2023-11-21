@@ -1,37 +1,83 @@
 let keys = document.querySelectorAll('.keys');
 let spaceKey = document.querySelector('.space_key');
-let body = document.querySelector('body');
-let text_input = document.querySelector('.text');
-let keyboard_wrapp = document.querySelector('.keyboard_wrapp');
+let randomText = document.getElementById('random-text');
+let currentPosition = 0;
+let originalText = "";
+let gameStarted = false;
+let startTime = null;
+let typedText = [];
+let timeElement = document.getElementById('time');
+let correctWordsElement = document.getElementById('correct-words');
+
+async function getRandomParagraph() {
+    try {
+        const response = await fetch('https://baconipsum.com/api/?type=meat-and-filler&paras=1');
+        const data = await response.json();
+
+        if (Array.isArray(data) && data.length > 0) {
+            originalText = data[0];
+            randomText.innerHTML = originalText.split('').map(char => `<span>${char}</span>`).join('');
+        } else {
+            console.error('Invalid response from the API');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getRandomParagraph);
 
 for(let i = 0; i < keys.length; i++) {
     keys[i].setAttribute('keyName', keys[i].innerText);
     keys[i].setAttribute('lowerCaseName', keys[i].innerText.toLowerCase());
 }
 
-window.addEventListener('keydown', function(e) {
-    for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyName' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
-            keys[i].classList.add('active')
-        }
-        if(e.code == 'Space') {
-            spaceKey.classList.add('active')
-        }
-    }
-})
-
 window.addEventListener('keyup', function(e) {
-    for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyName' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
-            keys[i].classList.remove('active')
-            keys[i].classList.add('remove')
-        }
-        if(e.code == 'Space') {
-            spaceKey.classList.remove('active');
-            spaceKey.classList.add('remove');
-        }
-        setTimeout(()=> {
-            keys[i].classList.remove('remove')
-        },200)
+  if (e.key === 'Enter') {
+    gameStarted = true;
+    startTime = new Date();
+    document.getElementById('start-box').style.display = 'none';
+    return;
+  }
+
+  if (!gameStarted) {
+      return;
+  }
+
+  for(let i = 0; i < keys.length; i++) {
+      if(e.key == keys[i].getAttribute('keyName' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
+          keys[i].classList.add('remove')
+      }
+      if(e.code == 'Space') {
+          spaceKey.classList.add('remove');
+      }
+      setTimeout(()=> {
+          keys[i].classList.remove('remove')
+      },200)
+  }
+
+  if (currentPosition < originalText.length) {
+      let spanElements = randomText.getElementsByTagName('span');
+      typedText.push(e.key);
+      if (originalText[currentPosition].toLowerCase() === e.key.toLowerCase()) {
+          // Correct key pressed
+          spanElements[currentPosition].style.color = 'green';
+      } else {
+          // Wrong key pressed
+          spanElements[currentPosition].style.color = 'red';
+      }
+      currentPosition++;
+
+      if (currentPosition === originalText.length) {
+        gameStarted = false;
+        let endTime = new Date();
+        let elapsedTime = (endTime - startTime) / 1000; // in minutes
+        let typedWords = typedText.join('').replace(/\s+/g, ' ').trim().split(' ');
+        let originalWords = originalText.replace(/\s+/g, ' ').trim().split(' ');
+        let correctWords = typedWords.filter((word, index) => word === originalWords[index]).length;
+        
+        timeElement.textContent = `Time: ${elapsedTime.toFixed(2)} seconds`;
+        correctWordsElement.textContent = `Correct words: ${correctWords}`;
     }
+  }
 })
