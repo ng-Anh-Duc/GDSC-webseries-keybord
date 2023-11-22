@@ -13,7 +13,10 @@ let startTime = null;
 let typedText = [];
 let timeElement = document.getElementById('time');
 let correctWordsElement = document.getElementById('correct-words');
-
+function reload(){
+    location.reload();
+    console.log('clicked');
+}
 async function getRandomParagraph() {
     try {
         const response = await fetch('https://random-word-api.herokuapp.com/word?number=50&length=5');
