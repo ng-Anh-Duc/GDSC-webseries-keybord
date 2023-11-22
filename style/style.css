@@ -26,7 +26,6 @@ body{
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
 
     background-color: #9D8478;
     font-family: 'Lato', sans-serif;
@@ -118,6 +117,7 @@ a {
   
   .row {
       display: flex;
+      justify-content: center;
   }
   
   .keys {
@@ -144,120 +144,76 @@ a {
   
   .ss_key {
       width: 60px;
-      visibility: hidden;
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
 
   }
   
   .backspace_key {
       width: 120px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
-
+      background-color: #D9D5D2;
   }
   
   .tab_key {
       width: 90px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
 
   }
   
   .slash_key {
       width: 90px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
 
   }
   
   .caps_lock_key {
       width: 120px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
 
   }
   
   .enter_key {
       width: 120px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
+      flex-grow: 1;
 
   }
   
   .shift_left_key {
       width: 154px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
 
   }
   
   .shift_right_key {
       width: 124px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      background-color: #D9D5D2;
+      flex-grow: 1;
 
   }
   
   .ques_key {
-      width: 10px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      width: 60px;
+      background-color: #D9D5D2;
 
   }
   
   .win_key {
-      width: 170px;
-
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
+      width: 60px;
+      background-color: #D9D5D2;
 
   }
   
   .last_useless_key {
       width: 60px;
+      background-color: #D9D5D2;
 
-      visibility: hidden;
-=======
-      color: #9D8478;
-      background-color: #9D8478;
-
-  }
-  
+  } 
   .space_key {
-      width: 398px;
+      width: 400px;
   }
   
   .keys.remove {
-
       animation: keys_animation 0.1s forwards ;
-=======
       animation: keys_animation 0.3s forwards ;
 
   }
