@@ -98,20 +98,20 @@ a {
 
 
 
-  .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     flex-direction: column;
-  }
+}
   
-  .keyboard_wrapp {
+.keyboard_wrapp {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
+}
   
   .row {
       display: flex;
