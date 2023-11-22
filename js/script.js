@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 /* edit */
-=======
+
 /* gọi api từ nguồn khác lấy 50 từ đơn giản hơn, chia từng từ thành 1 <char> */
 const typingText = document.querySelector("#text-box p");
-
->>>>>>> 41a3df7 (update)
-/* display key pressed */
-=======
-
-const typingText = document.querySelector("#text-box p");
->>>>>>> c8f619b (update)
-
 
 let keys = document.querySelectorAll('.keys');
 
