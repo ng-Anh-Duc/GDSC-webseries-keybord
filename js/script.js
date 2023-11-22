@@ -1,18 +1,4 @@
-/* gọi api từ nguồn khác lấy 50 từ đơn giản hơn, chia từng từ thành 1 <char> */
-const typingText = document.querySelector("#text-box p");
-async function getRandomParagraph() {
-      const response = await fetch('https://random-word-api.herokuapp.com/word?number=50&length=5');
-      const data = await response.json();
-      const randomParagraph = data.join(' ');
-      console.log(randomParagraph);
-      typingText.innerHTML = "";
-      randomParagraph.split("").forEach(char => {
-        let span = `<span>${char}</span>`
-        typingText.innerHTML += span;
-    });
-    typingText.querySelectorAll("span")[0].classList.add("active");
-}
-document.addEventListener('DOMContentLoaded', getRandomParagraph);
+
 /* display key pressed */
 
 
@@ -27,14 +13,18 @@ let startTime = null;
 let typedText = [];
 let timeElement = document.getElementById('time');
 let correctWordsElement = document.getElementById('correct-words');
-
+function reload(){
+    location.reload();
+    console.log('clicked');
+}
 async function getRandomParagraph() {
     try {
-        const response = await fetch('https://baconipsum.com/api/?type=meat-and-filler&paras=1');
+        const response = await fetch('https://random-word-api.herokuapp.com/word?number=50&length=5');
         const data = await response.json();
 
         if (Array.isArray(data) && data.length > 0) {
-            originalText = data[0];
+            
+            originalText = data.join(' ');
             randomText.innerHTML = originalText.split('').map(char => `<span>${char}</span>`).join('');
         } else {
             console.error('Invalid response from the API');
@@ -56,7 +46,8 @@ window.addEventListener('keyup', function(e) {
   if (e.key === 'Enter') {
     gameStarted = true;
     startTime = new Date();
-    document.getElementById('start-box').style.display = 'none';
+    document.getElementById('start-box').style.backgroundColor= '#34eb43';
+    document.getElementById('start-box-p').innerHTML = 'Click or F5 to restart';
     return;
   }
 
