@@ -7,15 +7,38 @@
     box-sizing: border-box;
 }
 body{
+
+    /* background-color: #ada29e; */
+    background-image: url('https://img.freepik.com/free-vector/blue-white-low-poly-triangle-shapes-background_1035-19007.jpg');
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    margin: 0 80px;
+}
+
+#start-box {
+    width: 15%;
+    position: absolute;
+    text-align: center;
+    font-size: 120%;
+    left: 40%;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
     background-color: #9D8478;
     font-family: 'Lato', sans-serif;
     margin: 0 80px;
 }
+
 #header{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 5px;
     margin-top: 50px;
 }
 
@@ -59,11 +82,16 @@ a {
 }
 
 #text-box {
-    color: #6E4454; 
+
+    color: #0f0b0d; 
+    font-size: 25px;
     overflow: hidden;
     position: relative;
-    padding: 10%;
+    padding-right: 5%;
+    padding-bottom: 7%;
+    padding-top: 5%;
 }
+
 #random-text{
     font-size: 30px;
     text-align: center;
@@ -95,10 +123,16 @@ a {
   .keys {
       width: 60px;
       height: 60px;
+
+      color: #130e10;
+      font-weight: 500;
+      font-size: 20px;
+      background-color: #efe9e5;
       color: #6e4454;
       font-weight: 500;
       font-size: 20px;
       background-color: #d9d5d2;
+
       border-radius: 15px;
       display: flex;
       justify-content: center;
@@ -110,68 +144,110 @@ a {
   
   .ss_key {
       width: 60px;
+      visibility: hidden;
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .backspace_key {
       width: 120px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .tab_key {
       width: 90px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .slash_key {
       width: 90px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .caps_lock_key {
       width: 120px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .enter_key {
       width: 120px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .shift_left_key {
       width: 154px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .shift_right_key {
       width: 124px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .ques_key {
       width: 10px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .win_key {
       width: 170px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .last_useless_key {
       width: 60px;
+
+      visibility: hidden;
+=======
       color: #9D8478;
       background-color: #9D8478;
+
   }
   
   .space_key {
@@ -179,7 +255,11 @@ a {
   }
   
   .keys.remove {
+
+      animation: keys_animation 0.1s forwards ;
+=======
       animation: keys_animation 0.3s forwards ;
+
   }
   
   @keyframes keys_animation {
@@ -191,5 +271,5 @@ a {
           background-color: #d9d5d2;
           color: #6e4454;
       }
-  }
+
 
