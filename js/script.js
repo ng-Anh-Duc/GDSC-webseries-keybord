@@ -43,7 +43,8 @@ window.addEventListener('keyup', function(e) {
   if (e.key === 'Enter') {
     gameStarted = true;
     startTime = new Date();
-    document.getElementById('start-box').style.display = 'none';
+    document.getElementById('start-box').style.backgroundColor= '#34eb43';
+    document.getElementById('start-box-p').innerHTML = 'Click or F5 to restart';
     return;
   }
 
