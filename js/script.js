@@ -1,11 +1,9 @@
 
-/* edit */
-
-/* gọi api từ nguồn khác lấy 50 từ đơn giản hơn, chia từng từ thành 1 <char> */
+/*call api*/
 const typingText = document.querySelector("#text-box p");
 
 let keys = document.querySelectorAll('.keys');
-
+let correctArr = [];
 let spaceKey = document.querySelector('.space_key');
 let randomText = document.getElementById('random-text');
 let currentPosition = 0;
@@ -13,15 +11,15 @@ let originalText = "";
 let gameStarted = false;
 let startTime = null;
 let typedText = [];
-let timeElement = document.getElementById('time');
-let correctWordsElement = document.getElementById('correct-words');
+let timeElement = document.querySelector('.result_time');
+let correctWordsElement = document.querySelector('.result-word');
+
 function reload(){
     location.reload();
-    console.log('clicked');
 }
 async function getRandomParagraph() {
     try {
-        const response = await fetch('https://random-word-api.herokuapp.com/word?number=50&length=5');
+        const response = await fetch('https://random-word-api.herokuapp.com/word?number=10&length=5');
         const data = await response.json();
 
         if (Array.isArray(data) && data.length > 0) {
@@ -85,16 +83,32 @@ window.addEventListener('keyup', function(e) {
         gameStarted = false;
         let endTime = new Date();
         let elapsedTime = (endTime - startTime) / 1000; // in minutes
-        let typedWords = typedText.join('').replace(/\s+/g, ' ').trim().split(' ');
-        let originalWords = originalText.replace(/\s+/g, ' ').trim().split(' ');
-        let correctWords = typedWords.filter((word, index) => word === originalWords[index]).length;
+        let typedWords = typedText;
+        let originalWords = originalText.split('');
+       
+        let correctWords = 0;
+
+        for (i = 0; i < originalWords.length; ++i) {
+            if (originalWords[i] == typedWords[i]) {
+                correctArr.push(typedWords[i]);
+            }
+        }
         
-        timeElement.textContent = `Time: ${elapsedTime.toFixed(2)} seconds`;
-        correctWordsElement.textContent = `Correct words: ${correctWords}`;
+        let listTextData = originalWords.join('').split(' ');
+        let listTypeUser = correctArr.join('').split(' ');
+        
+        
+        listTextData.forEach((ele, index) => {
+            if (ele == listTypeUser[index]) {
+                correctWords++;
+            }
+        })
+        
+        timeElement.textContent = `${elapsedTime.toFixed(2)} seconds`;
+        correctWordsElement.textContent = `${correctWords}`;
     }
   }
 })
-
 
 window.addEventListener('keypress', function(e) {
     for(let i = 0; i < keys.length; i++) {

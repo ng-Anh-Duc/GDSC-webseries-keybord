@@ -8,83 +8,72 @@
 }
 body{
 
-    /* background-color: #ada29e; */
-    background-image: url('https://img.freepik.com/free-vector/blue-white-low-poly-triangle-shapes-background_1035-19007.jpg');
-    background-size: cover;
+    background-color: #ada29e;
+    /* background-image: url('https://img.freepik.com/free-vector/blue-white-low-poly-triangle-shapes-background_1035-19007.jpg'); */
     font-family: 'Lato', sans-serif;
     margin: 0 80px;
 }
 
-#start-box {
-    width: 15%;
-    position: absolute;
-    text-align: center;
-    font-size: 120%;
-    left: 40%;
-    padding: 20px;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #9D8478;
-    font-family: 'Lato', sans-serif;
-    margin: 0 80px;
-}
+
 
 #header{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 5px;
     margin-top: 50px;
 }
-
-#logotext{
-    font-size: 25px;
-    color: #6E4454 ;
-    margin: 1px;
-    font-weight: bolder;
-}
-
-.logo-container img {
-    height: 25px;
-    width: 25px; 
+#logo {
     display: flex;
-    justify-content: center;
+    justify: center;
+    align-items: center;
+    gap: 0 15px;
+    font-size: 25px;
+    color: #6E4454;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-#space{
-    width: 60%;
+#logo:hover{
+    color: #4d2f3a;
 }
+
+#logo img {
+    width: 30px;
+    height: 30px;
+}
+
 #login{
     font-size: 25px;
     color: #6E4454 ;
-    margin: 1px;
-    font-weight: bolder;
+    font-weight: 600;
     cursor: pointer;
-
-    display: flex;
-    justify-content: right;
 }
 #login:hover{
     color: #4d2f3a;
 }
 
-#d1{
-    width: 5px;
+#start-box {
+    font-size: 20px;
+    padding: 20px 25px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: green;
 }
+
 
 a {
     text-decoration: none;
 }
 
 #text-box {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #0f0b0d; 
     font-size: 25px;
-    overflow: hidden;
-    position: relative;
-    padding: 5%;
+    padding: 80px 0;
     
 }
 
@@ -226,4 +215,20 @@ a {
           color: #6e4454;
       }
 
+    }
+
+    #result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+        gap: 25px;
+    }
+
+    .result {
+        font-size: 35px;
+        padding: 0 10px;
+        font-weight: border;
+        color: blue;
     }

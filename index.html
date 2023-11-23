@@ -12,19 +12,17 @@
 <body>
 
 
-    <div id="start-box" onclick="reload()" >
-        <p id="start-box-p">Press 'Enter' to start</p>
-    </div>
+    
 
     <header id="header">
         <div class="logo-container">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <img src="./style/logo.png" alt="Logo"></a>
+            <a id="logo" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
+                <img src="./style/logo.png" alt="Logo"><span>GDSCType</span> 
+            </a>
         </div>
-        <div id="d1"></div>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <div id="logotext">GDSCType</div>
-        </a>
-        <div id="space"></div>
+        <div id="start-box" onclick="reload()" >
+            <p id="start-box-p">Press 'Enter' to start</p>
+        </div>
         <a id="login" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Login</a>
     </header>
 
@@ -32,12 +30,14 @@
         <p id="random-text"></p>
     </div>
 
-
+    <div id="result">
+        <p id="time">Time:<span class="result result_time"> 0 second</span></p>
+        <p id="correct-words">Correct words:<span class="result result-word">0</span></p>
+    </div>
 
 
 
     <div class="container">
-
         <div class="keyboard_wrapp">
             <div class="keyboard_keys">
                 <div class="row">
@@ -117,8 +117,7 @@
 
 
     
-    <p id="time">Time: 0 second</p>
-    <p id="correct-words">Correct words: 0</p>
+   
 
 
     <script src="./js/script.js"></script>
